@@ -1,4 +1,7 @@
-$HEADER$namespace $NAMESPACE$
+namespace CShipsBattles.Controller.PlayerController
 {
-  public interface $INTERFACE$ {$END$}
+    public interface IPlayerController
+    {
+        
+    }
 }

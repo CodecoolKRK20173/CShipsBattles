@@ -1,4 +1,11 @@
-$HEADER$namespace $NAMESPACE$
+namespace CShipsBattles.Controller.Game
 {
-  public struct $STRUCT$ {$END$}
+    public struct SinglePlayer : IGame
+    {
+        public void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, 
+                         Model.Player player, Model.Player enemy)
+        {
+            
+        }
+    }
 }

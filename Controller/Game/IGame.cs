@@ -1,4 +1,7 @@
-$HEADER$namespace $NAMESPACE$
+namespace CShipsBattles.Controller.Game
 {
-  public interface $INTERFACE$ {$END$}
+    public interface IGame
+    {
+        void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, Model.Player player, Model.Player enemy);
+    }
 }

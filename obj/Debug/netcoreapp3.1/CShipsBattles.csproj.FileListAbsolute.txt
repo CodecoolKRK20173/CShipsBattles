@@ -1,0 +1,11 @@
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles.deps.json
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles.runtimeconfig.json
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles.runtimeconfig.dev.json
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles.dll
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/bin/Debug/netcoreapp3.1/CShipsBattles.pdb
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/obj/Debug/netcoreapp3.1/CShipsBattles.csprojAssemblyReference.cache
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/obj/Debug/netcoreapp3.1/CShipsBattles.AssemblyInfoInputs.cache
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/obj/Debug/netcoreapp3.1/CShipsBattles.AssemblyInfo.cs
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/obj/Debug/netcoreapp3.1/CShipsBattles.dll
+/home/jadwiga.skarbek/CodeCool/C#/TW/CShipsBattles/obj/Debug/netcoreapp3.1/CShipsBattles.pdb

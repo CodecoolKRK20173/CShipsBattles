@@ -1,4 +1,11 @@
-$HEADER$namespace $NAMESPACE$
+namespace CShipsBattles.Enum
 {
-  public class $CLASS$ {$END$}
+    public enum Ship
+    {
+        Battleship = 1,
+        Cruiser = 2,
+        Submarine = 3,
+        Destroyer = 4,
+        Carrier = 5
+    }
 }
