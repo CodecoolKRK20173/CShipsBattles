@@ -1,4 +1,4 @@
-namespace CShipsBattles.Enum
+namespace CShipsBattles.Enums
 {
     public enum Game
     {

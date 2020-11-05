@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using CShipsBattles.Controller.Game;
+using CShipsBattles.Controller.Game.Service;
 
 namespace CShipsBattles
 {
@@ -7,9 +9,8 @@ namespace CShipsBattles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            IGame game = new FriendBattle();
-            
+            ShipFactory s = new ShipFactory();
+            s._ship();
         }
     }
 }
