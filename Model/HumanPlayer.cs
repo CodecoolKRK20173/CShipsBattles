@@ -1,17 +1,19 @@
+using System;
+
 namespace CShipsBattles.Model
 {
     public class HumanPlayer : Player, Controller.PlayerController.IPlayerController
     {
-        public HumanPlayer(string name, int points, int lives) : base(name, points, lives)
+        public HumanPlayer(string name, byte points, sbyte lives) : base(name, points, lives)
         {
         }
 
-        public void PlaceShip(Ship ship, Ocean ocan)
+        public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocan)
         {
-            
+            Console.WriteLine();
         }
 
-        public bool Shoot(Ocean ocean)
+        public bool _shoot(Ocean ocean)
         {
             return false;
         }

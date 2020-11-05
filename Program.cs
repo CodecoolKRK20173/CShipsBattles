@@ -10,7 +10,7 @@ namespace CShipsBattles
         static void Main(string[] args)
         {
             ShipFactory s = new ShipFactory();
-            s._ship();
+            
         }
     }
 }
