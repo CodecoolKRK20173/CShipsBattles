@@ -1,3 +1,5 @@
+using System;
+
 namespace CShipsBattles.Model
 {
     public class HumanPlayer : Player, Controller.PlayerController.IPlayerController
@@ -6,9 +8,9 @@ namespace CShipsBattles.Model
         {
         }
 
-        public void PlaceShip(Ship ship, Ocean ocan)
+        public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocan)
         {
-            
+            Console.WriteLine();
         }
 
         public bool _shoot(Ocean ocean)
