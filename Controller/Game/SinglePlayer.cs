@@ -6,6 +6,8 @@ namespace CShipsBattles.Controller.Game
                          Model.Player player, Model.Player enemy)
         {
             
+            oceanEnemy.printOcean();
+            
         }
     }
 }
