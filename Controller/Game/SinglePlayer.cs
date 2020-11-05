@@ -10,7 +10,8 @@ namespace CShipsBattles.Controller.Game
                          Model.Player player, Model.Player enemy)
         {
             CSE.Ship shi = CSE.Ship.Battleship;
-           
+            Ship ship = new Ship(4, "#");
+            
             oceanEnemy.printOcean();
             
         }

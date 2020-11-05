@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
-using CShipsBattles.Controller.Game;
-using CShipsBattles.Controller.Game.Service;
+using CShipsBattles.Model;
 
 namespace CShipsBattles
 {
@@ -9,8 +7,8 @@ namespace CShipsBattles
     {
         static void Main(string[] args)
         {
-            ShipFactory s = new ShipFactory();
-            
+            Ocean ocean = new Ocean(15,15);
+            ocean.printOcean();
         }
     }
 }
