@@ -1,5 +1,5 @@
 ﻿using System;
-using CShipsBattles.Controller.Game;
+using CShipsBattles.Model;
 
 namespace CShipsBattles
 {
@@ -7,9 +7,8 @@ namespace CShipsBattles
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            IGame game = new FriendBattle();
-            
+            Ocean ocean = new Ocean(15,15);
+            ocean.printOcean();
         }
     }
 }

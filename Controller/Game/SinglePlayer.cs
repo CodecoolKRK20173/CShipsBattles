@@ -1,3 +1,7 @@
+using CSE = CShipsBattles.Enums;
+using System;
+using CShipsBattles.Model;
+
 namespace CShipsBattles.Controller.Game
 {
     public struct SinglePlayer : IGame
@@ -5,9 +9,13 @@ namespace CShipsBattles.Controller.Game
         public void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, 
                          Model.Player player, Model.Player enemy)
         {
+            CSE.Ship shi = CSE.Ship.Battleship;
+            Ship ship = new Ship(4, "#");
             
             oceanEnemy.printOcean();
             
         }
+
+        
     }
 }

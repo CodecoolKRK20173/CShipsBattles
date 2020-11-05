@@ -3,8 +3,8 @@ namespace CShipsBattles.Model
     public class Player
     {
         private string name;
-        private int points;
-        private int lives;
+        private byte points;
+        private sbyte lives;
 
         public string Name
         {
@@ -12,13 +12,13 @@ namespace CShipsBattles.Model
             set => name = value;
         }
 
-        public int Points
+        public byte Points
         {
             get => points;
             set => points = value;
         }
 
-        public int Lives
+        public sbyte Lives
         {
             get => lives;
             set => lives = value;
@@ -31,7 +31,7 @@ namespace CShipsBattles.Model
             this.Lives = 0;
         }
 
-        public Player(string name, int points, int lives)
+        public Player(string name, byte points, sbyte lives)
         {
             this.name = name;
             this.points = points;

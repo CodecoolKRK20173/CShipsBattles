@@ -5,43 +5,40 @@ namespace CShipsBattles.Model
     public struct Ocean
     {
         private Cell[,] ocean;
-        private int x;
-        private int y;
-        public int X
+        private byte x;
+        private byte y;
+        public byte X
         {
             get => x;
         }
-        public int Y
+        public byte Y
         {
             get => y;
         }
-        public Ocean(int x, int y)
+        public Ocean(byte x, byte y)
         {
             this.x = x;
             this.y = y;
             ocean = new Cell[x,y];
+            for (byte i = 0; i < X; i++)
+            {
+                for (byte j = 0; j < Y; j++)
+                {
+                    ocean[i, j] = new Cell(Helpers.Cell.wave);
+                }
+            }
         }
 
         public Cell[,] OceanField
         {
-            get
-            {
-                for (int i = 0; i < X; i++)
-                {
-                    for (int j = 0; j < Y; j++)
-                    {
-                        ocean[i, j] = new Cell(Helpers.Cell.wave);
-                    }
-                }
-                return ocean;
-            }
+            get => ocean;
         }
 
         public void printOcean()
         {
             string printedLine = "";
-            for (int i = 0; i < X; i++) {
-                for (int j = 0; j <Y; j++)
+            for (byte i = 0; i < X; i++) {
+                for (byte j = 0; j <Y; j++)
                 {
                     printedLine += ocean[i,j].Look + "  ";
                 }

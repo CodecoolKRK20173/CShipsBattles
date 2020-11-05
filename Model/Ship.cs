@@ -2,16 +2,16 @@ namespace CShipsBattles.Model
 {
     public struct Ship
     {
-        private int size;
+        private byte size;
         private string look;
 
-        public Ship(int size, string look)
+        public Ship(byte size, string look)
         {
             this.size = size;
             this.look = look;
         }
 
-        public int Size
+        public byte Size
         {
             get => size;
             set => size = value;
