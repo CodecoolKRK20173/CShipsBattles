@@ -2,22 +2,22 @@ namespace CShipsBattles.Model
 {
     public struct Coordinates
     {
-        private int x;
-        private int y;
+        private byte x;
+        private byte y;
 
-        public Coordinates(int x, int y)
+        public Coordinates(byte x, byte y)
         {
             this.x = x;
             this.y = y;
         }
 
-        public int X
+        public byte X
         {
             get => x;
             set => x = value;
         }
 
-        public int Y
+        public byte Y
         {
             get => y;
             set => y = value;

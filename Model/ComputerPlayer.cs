@@ -2,7 +2,7 @@ namespace CShipsBattles.Model
 {
     public class ComputerPlayer : Player, Controller.PlayerController.IPlayerController
     {
-        public ComputerPlayer(string name, int points, int lives) : base(name, points, lives)
+        public ComputerPlayer(string name, byte points, sbyte lives) : base(name, points, lives)
         {
             this.Name = "Computer";
         }
@@ -12,7 +12,7 @@ namespace CShipsBattles.Model
             
         }
 
-        public bool Shoot(Ocean ocean)
+        public bool _shoot(Ocean ocean)
         {
             return false;
         }
