@@ -4,7 +4,7 @@ namespace CShipsBattles.Model
     {
         private int x;
         private int y;
-
+        /*public (int x, int y) position;*/
         public Coordinates(int x, int y)
         {
             this.x = x;

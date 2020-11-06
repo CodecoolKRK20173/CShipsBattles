@@ -2,23 +2,23 @@ using System;
 
 namespace CShipsBattles.Model
 {
-    public struct Ocean
+    public class Ocean
     {
         private Cell[,] ocean;
-        private byte x;
-        private byte y;
+        //private byte x;//width
+        //private byte y;//height
         public byte X
         {
-            get => x;
+            get;
         }
         public byte Y
         {
-            get => y;
+            get;
         }
         public Ocean(byte x, byte y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
             ocean = new Cell[x,y];
             for (byte i = 0; i < X; i++)
             {
@@ -31,9 +31,10 @@ namespace CShipsBattles.Model
 
         public Cell[,] OceanField
         {
-            get => ocean;
-        }
+            get;}
 
+        
+        //to string stringbuilder
         public void printOcean()
         {
             string printedLine = "";

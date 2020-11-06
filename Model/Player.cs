@@ -1,11 +1,12 @@
 using System;
+using System.Linq;
 
 
 namespace CShipsBattles.Model
 {
     public class Player
     {
-        private string name;
+        /*private string name;
         private byte points;
         private sbyte lives;
 
@@ -69,18 +70,16 @@ namespace CShipsBattles.Model
             }
 
 
-        }
+        }*/
 
         public bool _shoot(Ocean ocean)
         {
             return false;
         }
         
-        private bool isAllTrue(bool[] arr) {
-            foreach (bool b in arr)
-                if (!b)
-                    return false;
-            return true;
+        private bool isAllTrue(bool[] arr)
+        {
+            return arr.All(b => b);
         }
     }
 }

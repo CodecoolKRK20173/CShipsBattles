@@ -4,22 +4,23 @@ using CShipsBattles.Model;
 
 namespace CShipsBattles.Controller.Game
 {
-    public class SinglePlayer : IGame
+    public class SinglePlayer /*: IGame*/
     {
-        public void Game(ref Ocean ocean, ref Ocean oceanEnemy, 
+        /*public void Game(ref Ocean ocean, ref Ocean oceanEnemy, 
                          ref Player player, ref Player enemy)
         {
             /*CSE.Ship shi = CSE.Ship.Battleship;
             Ship ship = new Ship(4, "#");
             
-            oceanEnemy.printOcean();*/
-            /*oceanEnemy.printOcean();*/
+            oceanEnemy.printOcean();#1#
+            /*oceanEnemy.printOcean();#1#
             /*foreach (int i in Enum.GetValues(typeof(CSE.Ship))) {
                 Console.WriteLine("Give your coordinates for " + (CSE.Ship)i + " :\n");
-                /*enemy.placeShip(new Ship(shipsLenghts[i], shipsLooks[i]), oceanEnemy);#1#
+                /*enemy.placeShip(new Ship(shipsLenghts[i], shipsLooks[i]), oceanEnemy);#2#
             }
+        
             Console.WriteLine("Your board:");
-            /*ocean.fillOcean();#1#*/
+            /*ocean.fillOcean();#2##1#
             Random random = new Random();
             foreach(int i in Enum.GetValues(typeof(CSE.Ship)))
             {
@@ -32,12 +33,12 @@ namespace CShipsBattles.Controller.Game
                 player.PlaceShip(ref coordinates, ref ship, ref ocean);
             }
             Console.WriteLine("Computer board:");
-            /*while (true){*/
+            /*while (true){#1#
                 Console.WriteLine("Score: " + player.Points); 
                 ocean.printOcean();
-                /*player.placeShoot(ocean);*/
+                /*player.placeShoot(ocean);#1#
                 Console.WriteLine("Score enemy: " + enemy.Points); 
-                /*oceanEnemy.printOcean();*/
+                /*oceanEnemy.printOcean();#1#
                 /*enemy.placeRandomShoot(oceanEnemy);
                 if (player.score >= maxPoints ) {
                     System.out.println("You won!!!");
@@ -47,9 +48,9 @@ namespace CShipsBattles.Controller.Game
                 if (enemy.score >= maxPoints) {
                     System.out.println("Computer won!!!");
                     restartGame();
-                }*/
-            /*} */
-        }
+                }#1#
+            /*} #1#
+        }*/
 
         
     }
