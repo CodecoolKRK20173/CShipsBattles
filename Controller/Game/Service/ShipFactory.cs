@@ -6,12 +6,13 @@ namespace CShipsBattles.Controller.Game.Service
 {
     public struct ShipFactory
     {
-        public void ShipCreation()
+        public static void ShipCreation(Coordinates coordinates, Player player, Ship ship)
         {
             int shipLength = 0;
             foreach(byte i in Enum.GetValues(typeof(CSE.Ship)))
             {
                 shipLength += i;
+                player.PlaceShip(coordinates, ship, ocean);
             }
         }
     }
