@@ -2,8 +2,8 @@ namespace CShipsBattles.Controller.Game
 {
     public struct FriendBattle : IGame
     {
-        public void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, 
-                         Model.Player player, Model.Player enemy)
+        public void Game(ref Model.Ocean ocean, ref Model.Ocean oceanEnemy, 
+                         ref Model.Player player, ref Model.Player enemy)
         {
             
         }

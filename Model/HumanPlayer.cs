@@ -8,7 +8,7 @@ namespace CShipsBattles.Model
         {
         }
 
-        public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocan)
+        public void PlaceShip(/*Coordinates coordinates, */Ship ship, Ocean ocan)
         {
             Console.WriteLine();
         }

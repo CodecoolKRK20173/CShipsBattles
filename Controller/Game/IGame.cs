@@ -2,6 +2,6 @@ namespace CShipsBattles.Controller.Game
 {
     public interface IGame
     {
-        void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, Model.Player player, Model.Player enemy);
+        void Game(ref Model.Ocean ocean, ref Model.Ocean oceanEnemy, ref Model.Player player, ref Model.Player enemy);
     }
 }
