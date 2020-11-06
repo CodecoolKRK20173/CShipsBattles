@@ -1,18 +1,12 @@
 namespace CShipsBattles.Model
 {
-    public struct Cell
+    public class Cell
     {
-        private string look;
-
         public Cell(string look)
         {
-            this.look = look;
+            this.Look = look;
         }
 
-        public string Look
-        {
-            get => look;
-            set => look = value;
-        }
+        public string Look { get; set; }
     }
 }
