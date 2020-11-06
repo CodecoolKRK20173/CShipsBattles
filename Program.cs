@@ -1,6 +1,7 @@
 ﻿using System;
 using CShipsBattles.Controller.Game;
-using CShipsBattles.Model;
+using CShipsBattles.Model.ShipModel;
+using CSE = CShipsBattles.Enums;
 
 namespace CShipsBattles
 {
@@ -19,11 +20,13 @@ namespace CShipsBattles
             Player enem = new Player("Enemy", 10, 100);
             SinglePlayer sp = new SinglePlayer();
             sp.Game(ref oc, ref en, ref p, ref enem);*/
+
+
             
-            Ship ship = new Cruiser();
-            Console.WriteLine(ship.ShipSize);
-            Ship c = new Destroyer();
-            Console.WriteLine(c.ShipSize);
+
+            //Console.WriteLine(ship.ShipSize);
+            
+           // Console.WriteLine(ship.ShipSize);
     
         }
     }

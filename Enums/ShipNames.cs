@@ -1,6 +1,6 @@
 namespace CShipsBattles.Enums
 {
-    public enum Ship
+    public enum ShipNames
     {
         Destroyer = 1,
         Cruiser = 2,

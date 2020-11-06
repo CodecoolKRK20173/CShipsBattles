@@ -1,4 +1,4 @@
-namespace CShipsBattles.Model
+namespace CShipsBattles.Model.ShipModel
 {
     public class Cruiser : Ship
     {
