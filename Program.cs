@@ -1,6 +1,6 @@
 ﻿using System;
 using CShipsBattles.Controller.Game;
-using CShipsBattles.Model.ShipModel;
+using CShipsBattles.Model;
 using CSE = CShipsBattles.Enums;
 
 namespace CShipsBattles
@@ -9,17 +9,14 @@ namespace CShipsBattles
     {
         static void Main(string[] args)
         {
-            /*Ocean oc = new Ocean(15,15);
-            Ship ship = new Ship(4, "X"); 
-            Player p = new Player("Marta", 10, 100);
-            p.PlaceShip(coordinates, ship, oc);
-            oc.printOcean();*/
-            /*Ocean oc = new Ocean(15,15);
-            Ocean en = new Ocean(15,15);
-            Player p = new Player("Marta", 10, 100);
-            Player enem = new Player("Enemy", 10, 100);
-            SinglePlayer sp = new SinglePlayer();
-            sp.Game(ref oc, ref en, ref p, ref enem);*/
+          
+            var oc = new Ocean(15,15);
+            var en = new Ocean(15,15);
+            var pl = new Player("Marta", 10, 100);
+            Player enem;
+            enem = new Player("Enemy", 10, 100);
+            var sp = new SinglePlayer();
+            sp.Game(ocean: oc, oceanEnemy: en, player: pl, enemy: enem);
 
 
             

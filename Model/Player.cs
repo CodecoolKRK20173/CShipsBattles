@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
+using CShipsBattles.Model.ShipModel;
 
 
 namespace CShipsBattles.Model
 {
     public class Player
     {
-        /*private string name;
+        private string name;
         private byte points;
         private sbyte lives;
 
@@ -35,11 +36,13 @@ namespace CShipsBattles.Model
             this.lives = lives;
         }
         
-        public void PlaceShip(ref Coordinates coordinates, ref Ship ship, ref Ocean ocean)
+        public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            bool[] _is_place_available = new bool[ship.Size];
-            try
-            {
+           bool[] _is_place_available = new bool[ship.Size];
+            /*try
+            {*/
+                //ocean.printOcean();
+
                 for (int j = 0; j < _is_place_available.Length; j++)
                 {
                     if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
@@ -61,17 +64,18 @@ namespace CShipsBattles.Model
                 }
                 else
                 {
-                    PlaceShip(ref coordinates, ref ship, ref ocean);
+                   PlaceShip(coordinates, ship, ocean);
                 }
-            }
+            /*
             catch (IndexOutOfRangeException)
             {
-                PlaceShip(ref coordinates, ref ship, ref ocean);
+               //Console.WriteLine("jagsfxwjnefg");
+               PlaceShip(coordinates, ship, ocean);
+            */
             }
 
 
-        }*/
-
+   
         public bool _shoot(Ocean ocean)
         {
             return false;

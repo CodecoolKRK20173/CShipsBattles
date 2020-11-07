@@ -2,7 +2,7 @@ namespace CShipsBattles.Model.ShipModel
 {
     public class Destroyer : Ship
     {
-        public override int ShipSize => 2;
+        public override int Size => 2;
         public override string Look => Helpers.Cell.ship;
         /*
          *     
