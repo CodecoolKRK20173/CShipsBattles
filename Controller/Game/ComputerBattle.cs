@@ -1,9 +1,11 @@
+using CShipsBattles.Model;
+
 namespace CShipsBattles.Controller.Game
 {
-    public struct ComputerBattle : IGame
+    public class ComputerBattle : IGame
     {
-        public void Game(Model.Ocean ocean, Model.Ocean oceanEnemy, 
-                         Model.Player player, Model.Player enemy)
+        public void Game(Ocean ocean, Ocean oceanEnemy, 
+                         Player player, Player enemy)
         {
             
         }

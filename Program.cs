@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using CShipsBattles.Controller.Game;
-using CShipsBattles.Controller.Game.Service;
+using CShipsBattles.Model;
+using CSE = CShipsBattles.Enums;
 
 namespace CShipsBattles
 {
@@ -9,8 +9,22 @@ namespace CShipsBattles
     {
         static void Main(string[] args)
         {
-            ShipFactory s = new ShipFactory();
+          
+            var oc = new Ocean(15,15);
+            var en = new Ocean(15,15);
+            var pl = new Player("Marta", 10, 100);
+            Player enem;
+            enem = new Player("Enemy", 10, 100);
+            var sp = new SinglePlayer();
+            sp.Game(ocean: oc, oceanEnemy: en, player: pl, enemy: enem);
+
+
             
+
+            //Console.WriteLine(ship.ShipSize);
+            
+           // Console.WriteLine(ship.ShipSize);
+    
         }
     }
 }

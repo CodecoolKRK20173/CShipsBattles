@@ -2,27 +2,27 @@ using System;
 
 namespace CShipsBattles.Model
 {
-    public struct Ocean
+    public class Ocean
     {
         private Cell[,] ocean;
-        private int x;
-        private int y;
-        public int X
+        //private byte x;//width
+        //private byte y;//height
+        public byte X
         {
-            get => x;
+            get;
         }
-        public int Y
+        public byte Y
         {
-            get => y;
+            get;
         }
-        public Ocean(int x, int y)
+        public Ocean(byte x, byte y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
             ocean = new Cell[x,y];
-            for (int i = 0; i < X; i++)
+            for (byte i = 0; i < X; i++)
             {
-                for (int j = 0; j < Y; j++)
+                for (byte j = 0; j < Y; j++)
                 {
                     ocean[i, j] = new Cell(Helpers.Cell.wave);
                 }
@@ -31,14 +31,15 @@ namespace CShipsBattles.Model
 
         public Cell[,] OceanField
         {
-            get => ocean;
-        }
+            get=>ocean;}
 
+        
+        //to string stringbuilder
         public void printOcean()
         {
             string printedLine = "";
-            for (int i = 0; i < X; i++) {
-                for (int j = 0; j <Y; j++)
+            for (byte i = 0; i < X; i++) {
+                for (byte j = 0; j <Y; j++)
                 {
                     printedLine += ocean[i,j].Look + "  ";
                 }

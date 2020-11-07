@@ -5,4 +5,27 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controller\Service\**" />
+    <Compile Remove="Controller\Coordinates.cs" />
+    <Compile Remove="Model\HumanPlayer.cs" />
+    <Compile Remove="Model\ComputerPlayer.cs" />
+    <Compile Remove="Controller\PlayerController\**" />
+    <Compile Remove="Controller\Game\Service\ShipFactory.cs" />
+    <Compile Remove="Controller\Game\Service\**" />
+    <Compile Remove="Enums\Cell.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Controller\Service\**" />
+    <EmbeddedResource Remove="Controller\PlayerController\**" />
+    <EmbeddedResource Remove="Controller\Game\Service\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controller\Service\**" />
+    <None Remove="Controller\PlayerController\**" />
+    <None Remove="Controller\Game\Service\**" />
+  </ItemGroup>
+
 </Project>
