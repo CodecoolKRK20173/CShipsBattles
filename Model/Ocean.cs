@@ -31,7 +31,7 @@ namespace CShipsBattles.Model
 
         public Cell[,] OceanField
         {
-            get;}
+            get=>ocean;}
 
         
         //to string stringbuilder

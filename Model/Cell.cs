@@ -4,7 +4,7 @@ namespace CShipsBattles.Model
     {
         public Cell(string look)
         {
-            this.Look = look;
+            Look = look;
         }
 
         public string Look { get; set; }

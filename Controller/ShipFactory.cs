@@ -3,9 +3,9 @@ using CSE = CShipsBattles.Enums;
 
 namespace CShipsBattles.Controller
 {
-    public class ShipFactory
+    public struct ShipFactory
     {
-        public Ship ship(CSE.ShipNames ship)
+        public static Ship ship(CSE.ShipNames ship)
         {
             // foreach (string s in CSE.ShipNames.GetNames(typeof(CSE.ShipNames)))
             return ship switch

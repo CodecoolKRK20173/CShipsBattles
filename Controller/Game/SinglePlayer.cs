@@ -1,38 +1,41 @@
 using CSE = CShipsBattles.Enums;
 using System;
 using CShipsBattles.Model;
+using CShipsBattles.Model.ShipModel;
 
 namespace CShipsBattles.Controller.Game
 {
-    public class SinglePlayer /*: IGame*/
+    public class SinglePlayer /*\\: IGame*/
     {
-        /*public void Game(ref Ocean ocean, ref Ocean oceanEnemy, 
-                         ref Player player, ref Player enemy)
+        public void Game(Ocean ocean, Ocean oceanEnemy,
+                         Player player, Player enemy)
         {
-            /*CSE.Ship shi = CSE.Ship.Battleship;
-            Ship ship = new Ship(4, "#");
-            
-            oceanEnemy.printOcean();#1#
-            /*oceanEnemy.printOcean();#1#
-            /*foreach (int i in Enum.GetValues(typeof(CSE.Ship))) {
-                Console.WriteLine("Give your coordinates for " + (CSE.Ship)i + " :\n");
-                /*enemy.placeShip(new Ship(shipsLenghts[i], shipsLooks[i]), oceanEnemy);#2#
-            }
-        
+
+           // oceanEnemy.printOcean();
+
+            //foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            /*{
+                CSE.ShipNames name = (CSE.ShipNames) i;
+                Console.WriteLine("Give your coordinates for " + (CSE.ShipNames) i + " :\n");
+                Coordinates cor = new Coordinates(1, 1);
+                //Ship s = new Battleship();
+                enemy.PlaceShip(cor, ShipFactory.ship(name), ocean);
+            }*/
+
             Console.WriteLine("Your board:");
-            /*ocean.fillOcean();#2##1#
+        
             Random random = new Random();
-            foreach(int i in Enum.GetValues(typeof(CSE.Ship)))
+            foreach(int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
+                CSE.ShipNames name = (CSE.ShipNames) i;
                 int x = random.Next(0,15);
                 int y = random.Next(0,15);
                 Coordinates coordinates = new Coordinates(x, y);
-                Ship ship = new Ship(i, Helpers.Cell.ship);
-                Console.WriteLine("x: "+x+"y: "+y); 
-                Console.WriteLine("size: "+ship.Size);
-                player.PlaceShip(ref coordinates, ref ship, ref ocean);
+                var sh = ShipFactory.ship(name);
+                player.PlaceShip(coordinates,sh, ocean);
             }
-            Console.WriteLine("Computer board:");
+            ocean.printOcean();
+            //Console.WriteLine("Computer board:");
             /*while (true){#1#
                 Console.WriteLine("Score: " + player.Points); 
                 ocean.printOcean();
@@ -49,9 +52,9 @@ namespace CShipsBattles.Controller.Game
                     System.out.println("Computer won!!!");
                     restartGame();
                 }#1#
-            /*} #1#
+            }
         }*/
+        }
 
-        
     }
 }

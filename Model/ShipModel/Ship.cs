@@ -12,6 +12,6 @@ namespace CShipsBattles.Model.ShipModel
 
         public abstract string Look {get;}
         
-        public abstract int ShipSize {get;} 
+        public abstract int Size {get;} 
     }
 }
