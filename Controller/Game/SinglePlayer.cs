@@ -1,5 +1,6 @@
 using CSE = CShipsBattles.Enums;
 using System;
+using CShipsBattles.Helpers;
 using CShipsBattles.Model;
 using CShipsBattles.Model.ShipModel;
 
@@ -7,6 +8,8 @@ namespace CShipsBattles.Controller.Game
 {
     public class SinglePlayer /*\\: IGame*/
     {
+        Random random = new Random();
+
         public void Game(Ocean ocean, Ocean oceanEnemy,
                          Player player, Player enemy)
         {
@@ -23,18 +26,31 @@ namespace CShipsBattles.Controller.Game
             }*/
 
             Console.WriteLine("Your board:");
-        
-            Random random = new Random();
-            foreach(int i in Enum.GetValues(typeof(CSE.ShipNames)))
-            {
-                CSE.ShipNames name = (CSE.ShipNames) i;
-                int x = random.Next(0,15);
-                int y = random.Next(0,15);
-                Coordinates coordinates = new Coordinates(x, y);
-                var sh = ShipFactory.ship(name);
-                player.PlaceShip(coordinates,sh, ocean);
-            }
-            ocean.printOcean();
+           
+                foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+                {
+
+                    CSE.ShipNames name = (CSE.ShipNames) i;
+                    var x = CoordinatesGenerated._coordinates[i - 1].X;
+                    var y = CoordinatesGenerated._coordinates[i - 1].Y;
+                    Coordinates coordinates = new Coordinates(x, y);
+                    var sh = ShipFactory.ship(name);
+                    try
+                    {
+                       // Console.WriteLine("x: " +x+ ", y: " + y);
+                    player.PlaceShip(coordinates, sh, ocean);
+                    }catch (IndexOutOfRangeException)
+                    {
+                     //   Console.WriteLine("blabla");
+                     //   CoordinatesGenerated.coordGenerate();
+                       // Coordinates coordinates2 = new Coordinates(x, y);
+                       // Console.WriteLine("x: " +x+ ", y: " + y);
+                       player.PlaceShip(coordinates, sh, ocean);
+                    }
+         
+
+                }
+                ocean.printOcean(); 
             //Console.WriteLine("Computer board:");
             /*while (true){#1#
                 Console.WriteLine("Score: " + player.Points); 

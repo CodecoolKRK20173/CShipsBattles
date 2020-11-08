@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
+using CShipsBattles.Helpers;
 using CShipsBattles.Model.ShipModel;
-
 
 namespace CShipsBattles.Model
 {
@@ -35,47 +35,50 @@ namespace CShipsBattles.Model
             this.points = points;
             this.lives = lives;
         }
-        
+
         public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-           bool[] _is_place_available = new bool[ship.Size];
-            /*try
-            {*/
-                //ocean.printOcean();
-
+            bool[] _is_place_available = new bool[ship.Size];
+            try
+            {
                 for (int j = 0; j < _is_place_available.Length; j++)
                 {
                     if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
                     {
                         _is_place_available[j] = true;
+                        for (int i = 0; i < ship.Size; i++)
+                        {
+                            ocean.OceanField[coordinates.X + i, coordinates.Y].Look = Helpers.Cell.ship;
+                        }
                     }
                     else
                     {
                         _is_place_available[j] = false;
+                        CoordinatesGenerated.coordGenerate();
                     }
                 }
 
-                if (isAllTrue(_is_place_available))
+                /*if (isAllTrue(_is_place_available))
                 {
                     for (int i = 0; i < ship.Size; i++)
                     {
                         ocean.OceanField[coordinates.X + i, coordinates.Y].Look = Helpers.Cell.ship;
                     }
-                }
-                else
+                }*/
+                /*else
                 {
-                   PlaceShip(coordinates, ship, ocean);
-                }
-            /*
+                    CoordinatesGenerated.coordGenerate();*/
+                    //PlaceShip(new Coordinates(), ship, ocean);
+                //}
+            }
             catch (IndexOutOfRangeException)
             {
-               //Console.WriteLine("jagsfxwjnefg");
-               PlaceShip(coordinates, ship, ocean);
-            */
+                CoordinatesGenerated.coordGenerate();
+                //PlaceShip(coordinates, ship, ocean);
+
             }
+        }
 
-
-   
         public bool _shoot(Ocean ocean)
         {
             return false;
