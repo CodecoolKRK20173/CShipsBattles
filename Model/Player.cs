@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using CShipsBattles.Helpers;
 using CShipsBattles.Model.ShipModel;
 
@@ -28,7 +27,7 @@ namespace CShipsBattles.Model
             get => lives;
             set => lives = value;
         }
-        
+
         public Player(string name, byte points, sbyte lives)
         {
             this.name = name;
@@ -38,44 +37,22 @@ namespace CShipsBattles.Model
 
         public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            bool[] _is_place_available = new bool[ship.Size];
-            try
+            while (true)
             {
-                for (int j = 0; j < _is_place_available.Length; j++)
+                if (is_place_in_range(coordinates, ship, ocean) && is_place_available(coordinates, ship, ocean))
                 {
-                    if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
+                    Console.WriteLine("ok");
+                    for (var j = 0; j < ship.Size; j++)
                     {
-                        _is_place_available[j] = true;
-                        for (int i = 0; i < ship.Size; i++)
-                        {
-                            ocean.OceanField[coordinates.X + i, coordinates.Y].Look = Helpers.Cell.ship;
-                        }
-                    }
-                    else
-                    {
-                        _is_place_available[j] = false;
-                        CoordinatesGenerated.coordGenerate();
+                        ocean.OceanField[coordinates.X + j, coordinates.Y].Look = Helpers.Cell.ship;
                     }
                 }
-
-                /*if (isAllTrue(_is_place_available))
+                else
                 {
-                    for (int i = 0; i < ship.Size; i++)
-                    {
-                        ocean.OceanField[coordinates.X + i, coordinates.Y].Look = Helpers.Cell.ship;
-                    }
-                }*/
-                /*else
-                {
-                    CoordinatesGenerated.coordGenerate();*/
-                    //PlaceShip(new Coordinates(), ship, ocean);
-                //}
-            }
-            catch (IndexOutOfRangeException)
-            {
-                CoordinatesGenerated.coordGenerate();
-                //PlaceShip(coordinates, ship, ocean);
-
+                    CoordinatesGenerated.coordGenerate();
+                    continue;
+                }
+                break;
             }
         }
 
@@ -84,9 +61,19 @@ namespace CShipsBattles.Model
             return false;
         }
         
-        private bool isAllTrue(bool[] arr)
+        private bool is_place_available(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            return arr.All(b => b);
+            for (var j = 0; j < ship.Size; j++)
+            {
+                if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
+                    return true;
+            }
+            return false;
+        }
+        
+        private bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
+        {
+            return ocean.X-coordinates.X-ship.Size > 0 && coordinates.Y <ocean.Y;
         }
     }
 }

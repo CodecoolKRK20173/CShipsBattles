@@ -35,20 +35,21 @@ namespace CShipsBattles.Controller.Game
                     var y = CoordinatesGenerated._coordinates[i - 1].Y;
                     Coordinates coordinates = new Coordinates(x, y);
                     var sh = ShipFactory.ship(name);
-                    try
+                    /*try
                     {
-                       // Console.WriteLine("x: " +x+ ", y: " + y);
+                       // Console.WriteLine("x: "*//* +x+ ", y: " + y);*/
                     player.PlaceShip(coordinates, sh, ocean);
-                    }catch (IndexOutOfRangeException)
+                    /*}catch (IndexOutOfRangeException)
                     {
                      //   Console.WriteLine("blabla");
                      //   CoordinatesGenerated.coordGenerate();
                        // Coordinates coordinates2 = new Coordinates(x, y);
                        // Console.WriteLine("x: " +x+ ", y: " + y);
                        player.PlaceShip(coordinates, sh, ocean);
-                    }
-         
-
+                    }*/
+                    /*Console.WriteLine("Ocean after: " + i);
+                    ocean.printOcean(); */
+              
                 }
                 ocean.printOcean(); 
             //Console.WriteLine("Computer board:");
