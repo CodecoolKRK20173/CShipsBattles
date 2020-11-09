@@ -33,20 +33,31 @@ namespace CShipsBattles.Controller.Game
                     CSE.ShipNames name = (CSE.ShipNames) i;
                     var x = CoordinatesGenerated._coordinates[i - 1].X;
                     var y = CoordinatesGenerated._coordinates[i - 1].Y;
-                    Coordinates coordinates = new Coordinates(x, y);
+                    var coordinates = new Coordinates(x, y);
                     var sh = ShipFactory.ship(name);
-                    /*try
+                    try
                     {
-                       // Console.WriteLine("x: "*//* +x+ ", y: " + y);*/
-                    player.PlaceShip(coordinates, sh, ocean);
-                    /*}catch (IndexOutOfRangeException)
+                        if (Player.is_place_available(coordinates, sh, ocean) &&
+                            Player.is_place_in_range(coordinates, sh, ocean))
+                        {
+                            player.PlaceShip(coordinates, sh, ocean);
+                        }
+                        else
+                        {
+                            CoordinatesGenerated.coordGenerate();
+                            var xx = CoordinatesGenerated._coordinates[i - 1].X;
+                            var yy = CoordinatesGenerated._coordinates[i - 1].Y;
+                            var coordinates2 = new Coordinates(xx, yy);
+                            player.PlaceShip(coordinates2, sh, ocean);
+                        }
+                    }catch (IndexOutOfRangeException)
                     {
-                     //   Console.WriteLine("blabla");
-                     //   CoordinatesGenerated.coordGenerate();
-                       // Coordinates coordinates2 = new Coordinates(x, y);
-                       // Console.WriteLine("x: " +x+ ", y: " + y);
-                       player.PlaceShip(coordinates, sh, ocean);
-                    }*/
+                        CoordinatesGenerated.coordGenerate();
+                        var xx = CoordinatesGenerated._coordinates[i - 1].X;
+                        var yy = CoordinatesGenerated._coordinates[i - 1].Y;
+                        var coordinates3 = new Coordinates(xx, yy);
+                        player.PlaceShip(coordinates3, sh, ocean);
+                    }
                     /*Console.WriteLine("Ocean after: " + i);
                     ocean.printOcean(); */
               

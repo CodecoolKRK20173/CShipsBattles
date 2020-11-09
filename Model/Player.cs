@@ -37,23 +37,21 @@ namespace CShipsBattles.Model
 
         public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            while (true)
+            /*while (true)
             {
                 if (is_place_in_range(coordinates, ship, ocean) && is_place_available(coordinates, ship, ocean))
-                {
-                    Console.WriteLine("ok");
+                {*/
                     for (var j = 0; j < ship.Size; j++)
                     {
                         ocean.OceanField[coordinates.X + j, coordinates.Y].Look = Helpers.Cell.ship;
                     }
-                }
+                /*}
                 else
                 {
                     CoordinatesGenerated.coordGenerate();
-                    continue;
                 }
                 break;
-            }
+            }*/
         }
 
         public bool _shoot(Ocean ocean)
@@ -61,7 +59,7 @@ namespace CShipsBattles.Model
             return false;
         }
         
-        private bool is_place_available(Coordinates coordinates, Ship ship, Ocean ocean)
+        public static bool is_place_available(Coordinates coordinates, Ship ship, Ocean ocean)
         {
             for (var j = 0; j < ship.Size; j++)
             {
@@ -71,9 +69,11 @@ namespace CShipsBattles.Model
             return false;
         }
         
-        private bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
+        public static bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            return ocean.X-coordinates.X-ship.Size > 0 && coordinates.Y <ocean.Y;
+            if (ocean.X - coordinates.X - ship.Size <= 0 && coordinates.Y < ocean.Y)
+                return true;
+            return false;
         }
     }
 }
