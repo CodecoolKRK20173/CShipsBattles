@@ -31,26 +31,17 @@ namespace CShipsBattles.Controller.Game
                 {
 
                     CSE.ShipNames name = (CSE.ShipNames) i;
-                    var x = CoordinatesGenerated._coordinates[i].X;
-                    var y = CoordinatesGenerated._coordinates[i].Y;
-                    var coordinates = new Coordinates(x, y);
+                    var coordinates = CoordinatesGenerated._coordinates[i];
                     var sh = ShipFactory.ship(name);
-                    /*Console.WriteLine("bla: " + (ocean.X - coordinates.X - sh.Size));
-                    Console.WriteLine(coordinates.X);
-                    Console.WriteLine(coordinates.Y);
-                    Console.WriteLine("Size: " + sh.Size);*/
-                    Console.WriteLine(ocean.X - coordinates.X - sh.Size);
-                   if (!Player.is_place_available(coordinates, sh, ocean) ||
-                          !Player.is_place_in_range(coordinates, sh, ocean))
+                    while (!Player.is_place_available(coordinates, sh, ocean) ||
+                           !Player.is_place_in_range(coordinates, sh, ocean))
                    {
+                          CoordinatesGenerated._coordinates.Clear();
                           CoordinatesGenerated.coordGenerate();
-                          var xx = CoordinatesGenerated._coordinates[i].X;
-                          var yy = CoordinatesGenerated._coordinates[i].Y;
-                          coordinates = new Coordinates(xx,yy);
-                          Console.WriteLine(ocean.X - coordinates.X - sh.Size);
+                          coordinates = CoordinatesGenerated._coordinates[i];
                    }
-                    //player.PlaceShip(coordinates, sh, ocean);
-                    
+                    player.PlaceShip(coordinates, sh, ocean);
+                  
                     /*try
                     {
                         if (Player.is_place_available(coordinates, sh, ocean) &&
@@ -78,6 +69,7 @@ namespace CShipsBattles.Controller.Game
                     ocean.printOcean(); */
               
                 }
+                ocean.printOcean();
                // ocean.printOcean(); 
             //Console.WriteLine("Computer board:");
             /*while (true){#1#
