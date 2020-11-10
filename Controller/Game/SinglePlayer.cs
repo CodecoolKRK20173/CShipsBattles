@@ -13,23 +13,10 @@ namespace CShipsBattles.Controller.Game
         public void Game(Ocean ocean, Ocean oceanEnemy,
                          Player player, Player enemy)
         {
-
-           // oceanEnemy.printOcean();
-
-            //foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
-            /*{
-                CSE.ShipNames name = (CSE.ShipNames) i;
-                Console.WriteLine("Give your coordinates for " + (CSE.ShipNames) i + " :\n");
-                Coordinates cor = new Coordinates(1, 1);
-                //Ship s = new Battleship();
-                enemy.PlaceShip(cor, ShipFactory.ship(name), ocean);
-            }*/
-
-            Console.WriteLine("Your board:");
+            // oceanEnemy.printOcean();
            CoordinatesGenerated.coordGenerate();
                 foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
                 {
-
                     CSE.ShipNames name = (CSE.ShipNames) i;
                     var coordinates = CoordinatesGenerated._coordinates[i];
                     var sh = ShipFactory.ship(name);
@@ -41,34 +28,8 @@ namespace CShipsBattles.Controller.Game
                           coordinates = CoordinatesGenerated._coordinates[i];
                    }
                     player.PlaceShip(coordinates, sh, ocean);
-                  
-                    /*try
-                    {
-                        if (Player.is_place_available(coordinates, sh, ocean) &&
-                            Player.is_place_in_range(coordinates, sh, ocean))
-                        {
-                            player.PlaceShip(coordinates, sh, ocean);
-                        }*/
-                        /*else
-                        {
-                            CoordinatesGenerated.coordGenerate();
-                            var xx = CoordinatesGenerated._coordinates[i - 1].X;
-                            var yy = CoordinatesGenerated._coordinates[i - 1].Y;
-                            var coordinates2 = new Coordinates(xx, yy);
-                            player.PlaceShip(coordinates2, sh, ocean);
-                        }*/
-                    /*}catch (StackOverflowException)
-                    {*/
-                        /*CoordinatesGenerated.coordGenerate();
-                        var xx = CoordinatesGenerated._coordinates[i - 1].X;
-                        var yy = CoordinatesGenerated._coordinates[i - 1].Y;
-                        var coordinates3 = new Coordinates(xx, yy);
-                        player.PlaceShip(coordinates3, sh, ocean);*/
-                    /*}*/
-                    /*Console.WriteLine("Ocean after: " + i);
-                    ocean.printOcean(); */
-              
                 }
+                Console.WriteLine("Your board:");
                 ocean.printOcean();
                // ocean.printOcean(); 
             //Console.WriteLine("Computer board:");
@@ -91,12 +52,5 @@ namespace CShipsBattles.Controller.Game
             }
         }*/
         }
-
-
-        /*private Coordinates coordinates()
-        {
-            while (!Player.is_place_available(coordinates, sh, ocean) ||
-                          !Player.is_place_in_range(coordinates, sh, ocean))
-        }*/
     }
 }
