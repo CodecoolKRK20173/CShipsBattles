@@ -4,10 +4,10 @@ using CShipsBattles.Model;
 
 namespace CShipsBattles.Helpers
 {
-    public struct CoordinatesGenerated
+    public class CoordinatesGenerated
     {
         
-        public static readonly List<Coordinates> _coordinates = new List<Coordinates>();
+        public static List<Coordinates> _coordinates = new List<Coordinates>();
 
         public static void coordGenerate()
         {

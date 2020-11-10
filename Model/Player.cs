@@ -37,21 +37,10 @@ namespace CShipsBattles.Model
 
         public void PlaceShip(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            /*while (true)
+            for (var j = 0; j < ship.Size; j++)
             {
-                if (is_place_in_range(coordinates, ship, ocean) && is_place_available(coordinates, ship, ocean))
-                {*/
-                    for (var j = 0; j < ship.Size; j++)
-                    {
-                        ocean.OceanField[coordinates.X + j, coordinates.Y].Look = Helpers.Cell.ship;
-                    }
-                /*}
-                else
-                {
-                    CoordinatesGenerated.coordGenerate();
-                }
-                break;
-            }*/
+                ocean.OceanField[coordinates.X + j, coordinates.Y].Look = Helpers.Cell.ship;
+            }
         }
 
         public bool _shoot(Ocean ocean)
@@ -61,19 +50,30 @@ namespace CShipsBattles.Model
         
         public static bool is_place_available(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            for (var j = 0; j < ship.Size; j++)
+            var i = 0;
+            try
             {
-                if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
-                    return true;
+                for (var j = 0; j < ship.Size; j++)
+                {
+                    if (ocean.OceanField[coordinates.X + j, coordinates.Y].Look.Equals(Helpers.Cell.wave))
+                    {
+                        i += 1;
+                    }
+                }
             }
-            return false;
+            catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
+
+            return i == ship.Size;
+            //CoordinatesGenerated.coordGenerate();
         }
         
         public static bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
         {
-            if (ocean.X - coordinates.X - ship.Size <= 0 && coordinates.Y < ocean.Y)
-                return true;
-            return false;
+            return ocean.X - coordinates.X - ship.Size >= 0;
+            //CoordinatesGenerated.coordGenerate();
         }
     }
 }

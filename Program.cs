@@ -16,7 +16,7 @@ namespace CShipsBattles
             var pl = new Player("Marta", 10, 100);
             Player enem;
             enem = new Player("Enemy", 10, 100);
-            CoordinatesGenerated.coordGenerate();
+            //CoordinatesGenerated.coordGenerate();
             var sp = new SinglePlayer();
             sp.Game(ocean: oc, oceanEnemy: en, player: pl, enemy: enem);
 
