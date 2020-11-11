@@ -2,7 +2,6 @@ using CSE = CShipsBattles.Enums;
 using System;
 using CShipsBattles.Helpers;
 using CShipsBattles.Model;
-using CShipsBattles.Model.ShipModel;
 
 namespace CShipsBattles.Controller.Game
 {
@@ -13,8 +12,9 @@ namespace CShipsBattles.Controller.Game
         public void Game(Ocean ocean, Ocean oceanEnemy,
                          Player player, Player enemy)
         {
+            
             // oceanEnemy.printOcean();
-           CoordinatesGenerated.coordGenerate();
+                CoordinatesGenerated.coordGenerate();
                 foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
                 {
                     CSE.ShipNames name = (CSE.ShipNames) i;
@@ -27,11 +27,14 @@ namespace CShipsBattles.Controller.Game
                           CoordinatesGenerated.coordGenerate();
                           coordinates = CoordinatesGenerated._coordinates[i];
                    }
-                    player.PlaceShip(coordinates, sh, ocean);
+                    player.PlaceShipVertically(coordinates, sh, ocean);
                 }
                 Console.WriteLine("Your board:");
                 ocean.printOcean();
-               // ocean.printOcean(); 
+             
+                
+                
+                
             //Console.WriteLine("Computer board:");
             /*while (true){#1#
                 Console.WriteLine("Score: " + player.Points); 
