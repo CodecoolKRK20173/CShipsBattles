@@ -1,4 +1,5 @@
 using System;
+using CShipsBattles.Model;
 
 namespace CShipsBattles.Controller
 {
@@ -21,10 +22,18 @@ namespace CShipsBattles.Controller
             return dir;
         }
 
-        public static int GetIntInput(string message)
+        private static int GetIntInput(string message)
         {
             Console.WriteLine(message);
             return Int32.Parse(Console.ReadLine());
+        }
+
+        public static Coordinates GetCoordinates(string message)
+        {
+            Console.WriteLine(message);
+            var x = GetIntInput("Give me direction for x");
+            var y = GetIntInput("Give me direction for y");
+            return new Coordinates(x, y);
         }
     }
 }

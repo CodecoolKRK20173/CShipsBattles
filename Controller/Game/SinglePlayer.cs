@@ -51,14 +51,37 @@ namespace CShipsBattles.Controller.Game
             ocean.printOcean();*/
             foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
+                
                 CSE.ShipNames name = (CSE.ShipNames) i;
                 var sh2 = ShipFactory.ship(name);
                 var direction = Input.GetDirection("Give me direction for " + name);
-                if (direction.Equals("v"))
-                    Console.WriteLine("hor");
-                if(direction.Equals("h"))
-                    Console.WriteLine("ver");
+                var coo = new Coordinates(17, 17);
+                switch (direction)
+                {
+                    case "v":
+                    {
+                        coo = Input.GetCoordinates("Give me coordinates for " + name);
+                        player.PlaceShipVertically(coo, sh2, ocean);
+                        ocean.printOcean();
+                        break;
+                    }
+                    case "h":
+                    {
+                        
+                        while (!Player.is_place_availableHor(coo, sh2, oceanEnemy) ||
+                               !Player.is_place_in_rangeHor(coo, sh2, oceanEnemy))
+                        {
+                            Console.WriteLine("Dupa dupa dupa");
+                            coo = Input.GetCoordinates("Give me coordinates for " + name);
+                        }
+                        player.PlaceShipHorizontally(coo, sh2, ocean);
+                        ocean.printOcean();
+                        break;
+                    } 
+                }
+             
             }
+            ocean.printOcean();
             }
 
         

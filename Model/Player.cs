@@ -62,13 +62,11 @@ namespace CShipsBattles.Model
             }
 
             return i == ship.Size;
-            //CoordinatesGenerated.coordGenerate();
         }
         
         public static bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
         {
             return ocean.X - coordinates.X - ship.Size >= 0;
-            //CoordinatesGenerated.coordGenerate();
         }
         
         public void PlaceShipHorizontally(Coordinates coordinates, Ship ship, Ocean ocean)
