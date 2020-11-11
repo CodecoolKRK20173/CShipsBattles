@@ -19,14 +19,6 @@ namespace CShipsBattles
             //CoordinatesGenerated.coordGenerate();
             var sp = new SinglePlayer();
             sp.Game(ocean: oc, oceanEnemy: en, player: pl, enemy: enem);
-
-
-            
-
-            //Console.WriteLine(ship.ShipSize);
-            
-           // Console.WriteLine(ship.ShipSize);
-    
         }
     }
 }

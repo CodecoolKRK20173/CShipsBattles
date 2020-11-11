@@ -3,7 +3,7 @@ using CShipsBattles.Model;
 
 namespace CShipsBattles.Controller
 {
-    public struct Input
+    public class Input
     {
         public static string GetStringInput(string message)
         {
@@ -13,7 +13,7 @@ namespace CShipsBattles.Controller
         
         public static string GetDirection(string message)
         {
-            string dir = "";
+            var dir = "";
             while (!dir.Equals("h") && !dir.Equals("v"))
             {
                 Console.WriteLine(message);

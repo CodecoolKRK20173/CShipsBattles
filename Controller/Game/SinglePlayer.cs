@@ -17,7 +17,7 @@ namespace CShipsBattles.Controller.Game
             // oceanEnemy.printOcean();
             CoordinatesGenerated.coordGenerate();
            
-            /*foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
                 CSE.ShipNames name = (CSE.ShipNames) i;
                 var sh = ShipFactory.ship(name);
@@ -26,8 +26,7 @@ namespace CShipsBattles.Controller.Game
                 switch (dir)
                 {
                     case 0:
-                        while (!Player.is_place_available(coordinates, sh, ocean) ||
-                               !Player.is_place_in_range(coordinates, sh, ocean))
+                        while (!Player.is_place_available(coordinates, sh, ocean))
                         {
                             CoordinatesGenerated._coordinates.Clear();
                             CoordinatesGenerated.coordGenerate();
@@ -36,8 +35,7 @@ namespace CShipsBattles.Controller.Game
                         player.PlaceShipVertically(coordinates, sh, ocean);
                         break;
                     case 1:
-                        while (!Player.is_place_availableHor(coordinates, sh, ocean) ||
-                               !Player.is_place_in_rangeHor(coordinates, sh, ocean))
+                        while (!Player.is_place_availableHor(coordinates, sh, ocean))
                         {
                             CoordinatesGenerated._coordinates.Clear();
                             CoordinatesGenerated.coordGenerate();
@@ -48,32 +46,31 @@ namespace CShipsBattles.Controller.Game
                 }
             }
             Console.WriteLine("Your board:");
-            ocean.printOcean();*/
+            ocean.printOcean();
             foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
                 
-                CSE.ShipNames name = (CSE.ShipNames) i;
+                var name = (CSE.ShipNames) i;
                 var sh2 = ShipFactory.ship(name);
                 var direction = Input.GetDirection("Give me direction for " + name);
-                var coo = new Coordinates(17, 17);
+                var coo = new Coordinates(100, 100);
                 switch (direction)
                 {
                     case "v":
-                        while (!Player.is_place_availableHor(coo, sh2, ocean))
+                        while (!Player.is_place_available(coo, sh2, oceanEnemy))
                         {
                             coo = Input.GetCoordinates("Give me coordinates for " + name);
                         }
-                        player.PlaceShipVertically(coo, sh2, ocean);
-                        ocean.printOcean();
+                        enemy.PlaceShipVertically(coo, sh2, oceanEnemy);
+                        oceanEnemy.printOcean();
                         break;
                     case "h":       
-                        while (!Player.is_place_availableHor(coo, sh2, ocean))
+                        while (!Player.is_place_availableHor(coo, sh2, oceanEnemy))
                         {
-                            Console.WriteLine("Dupa dupa dupa");
                             coo = Input.GetCoordinates("Give me coordinates for " + name);
                         }
-                        player.PlaceShipHorizontally(coo, sh2, ocean);
-                        ocean.printOcean();
+                        enemy.PlaceShipHorizontally(coo, sh2, oceanEnemy);
+                        oceanEnemy.printOcean();
                         break;
                 }
              

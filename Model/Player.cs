@@ -63,12 +63,7 @@ namespace CShipsBattles.Model
 
             return i == ship.Size;
         }
-        
-        public static bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
-        {
-            return ocean.X - coordinates.X - ship.Size >= 0;
-        }
-        
+
         public void PlaceShipHorizontally(Coordinates coordinates, Ship ship, Ocean ocean)
         {
             for (var j = 0; j < ship.Size; j++)
@@ -99,7 +94,6 @@ namespace CShipsBattles.Model
             {
                 return false;
             }
-
             return i == ship.Size;
         }
     }
