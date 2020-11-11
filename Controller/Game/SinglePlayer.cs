@@ -15,9 +15,9 @@ namespace CShipsBattles.Controller.Game
         {
 
             // oceanEnemy.printOcean();
-            /*CoordinatesGenerated.coordGenerate();
+            CoordinatesGenerated.coordGenerate();
            
-            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            /*foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
                 CSE.ShipNames name = (CSE.ShipNames) i;
                 var sh = ShipFactory.ship(name);
@@ -59,17 +59,15 @@ namespace CShipsBattles.Controller.Game
                 switch (direction)
                 {
                     case "v":
-                    {
-                        coo = Input.GetCoordinates("Give me coordinates for " + name);
+                        while (!Player.is_place_availableHor(coo, sh2, ocean))
+                        {
+                            coo = Input.GetCoordinates("Give me coordinates for " + name);
+                        }
                         player.PlaceShipVertically(coo, sh2, ocean);
                         ocean.printOcean();
                         break;
-                    }
-                    case "h":
-                    {
-                        
-                        while (!Player.is_place_availableHor(coo, sh2, oceanEnemy) ||
-                               !Player.is_place_in_rangeHor(coo, sh2, oceanEnemy))
+                    case "h":       
+                        while (!Player.is_place_availableHor(coo, sh2, ocean))
                         {
                             Console.WriteLine("Dupa dupa dupa");
                             coo = Input.GetCoordinates("Give me coordinates for " + name);
@@ -77,11 +75,9 @@ namespace CShipsBattles.Controller.Game
                         player.PlaceShipHorizontally(coo, sh2, ocean);
                         ocean.printOcean();
                         break;
-                    } 
                 }
              
-            }
-            ocean.printOcean();
+            //ocean.printOcean();
             }
 
         
@@ -109,4 +105,5 @@ namespace CShipsBattles.Controller.Game
             }
         }*/
     }
+}
 }

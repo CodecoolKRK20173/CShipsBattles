@@ -102,10 +102,5 @@ namespace CShipsBattles.Model
 
             return i == ship.Size;
         }
-        
-        public static bool is_place_in_rangeHor(Coordinates coordinates, Ship ship, Ocean ocean)
-        {
-            return ocean.Y - coordinates.Y - ship.Size >= 0;
-        }
     }
 }
