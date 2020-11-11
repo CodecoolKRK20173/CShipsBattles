@@ -7,7 +7,6 @@ namespace CShipsBattles.Controller
     {
         public static Ship ship(CSE.ShipNames ship)
         {
-            // foreach (string s in CSE.ShipNames.GetNames(typeof(CSE.ShipNames)))
             return ship switch
             {
                 CSE.ShipNames.Battleship => new Battleship(),
