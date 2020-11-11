@@ -15,19 +15,36 @@ namespace CShipsBattles.Controller.Game
             
             // oceanEnemy.printOcean();
                 CoordinatesGenerated.coordGenerate();
+               
                 foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
                 {
                     CSE.ShipNames name = (CSE.ShipNames) i;
-                    var coordinates = CoordinatesGenerated._coordinates[i];
                     var sh = ShipFactory.ship(name);
-                    while (!Player.is_place_available(coordinates, sh, ocean) ||
-                           !Player.is_place_in_range(coordinates, sh, ocean))
-                   {
-                          CoordinatesGenerated._coordinates.Clear();
-                          CoordinatesGenerated.coordGenerate();
-                          coordinates = CoordinatesGenerated._coordinates[i];
-                   }
-                    player.PlaceShipVertically(coordinates, sh, ocean);
+                    var coordinates = CoordinatesGenerated._coordinates[i];
+                    var dir = random.Next(0, 2);
+                    switch (dir)
+                    {
+                        case 0:
+                            while (!Player.is_place_available(coordinates, sh, ocean) ||
+                                   !Player.is_place_in_range(coordinates, sh, ocean))
+                            {
+                                CoordinatesGenerated._coordinates.Clear();
+                                CoordinatesGenerated.coordGenerate();
+                                coordinates = CoordinatesGenerated._coordinates[i];
+                            }
+                            player.PlaceShipVertically(coordinates, sh, ocean);
+                            break;
+                        case 1:
+                            while (!Player.is_place_availableHor(coordinates, sh, ocean) ||
+                                   !Player.is_place_in_rangeHor(coordinates, sh, ocean))
+                            {
+                                CoordinatesGenerated._coordinates.Clear();
+                                CoordinatesGenerated.coordGenerate();
+                                coordinates = CoordinatesGenerated._coordinates[i];
+                            }
+                            player.PlaceShipHorizontally(coordinates, sh, ocean);
+                            break;
+                    }
                 }
                 Console.WriteLine("Your board:");
                 ocean.printOcean();
