@@ -1,5 +1,4 @@
 using System;
-using CShipsBattles.Helpers;
 using CShipsBattles.Model.ShipModel;
 
 namespace CShipsBattles.Model
@@ -95,11 +94,6 @@ namespace CShipsBattles.Model
                 return false;
             }
             return i == ship.Size;
-        }
-
-        public void Shoot()
-        {
-            
         }
     }
 }

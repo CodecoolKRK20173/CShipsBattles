@@ -13,8 +13,8 @@ namespace CShipsBattles.Controller.Game
         {
             var ocean = new Ocean(15, 15);
             var oceanEnemy = new Ocean(15, 15);
-            var player = new Player("Marta", 0, 7);
-            var enemy = new Player("Computer", 0, 7);
+            var enemy = new Player("Marta", 0, 7);
+            var player = new Player("Computer", 0, 7);
             CoordinatesGenerated.coordGenerate();
             PlaceAllShips(ocean, oceanEnemy, player, enemy);
             //Console.WriteLine("Computer board:");
@@ -36,6 +36,15 @@ namespace CShipsBattles.Controller.Game
                 }#1#
             }
         }*/
+            while (ShouldGameLast(player, enemy))
+            {
+                Console.WriteLine("Shoot " + enemy.Name);
+                Console.WriteLine("Your score is: " + enemy.Points);
+                Console.WriteLine("You have " + enemy.Lives + " lives left.");
+                //ocean.printOcean();
+                var shootCoordinates = Input.GetShootPosition("Where to place shoot?");
+                ocean.PlaceShoot(enemy, shootCoordinates);
+            }
         }
 
         private void PlaceAllShips(Ocean ocean, Ocean oceanEnemy,
@@ -43,7 +52,7 @@ namespace CShipsBattles.Controller.Game
         {
             foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
             {
-                CSE.ShipNames name = (CSE.ShipNames) i;
+                var name = (CSE.ShipNames) i;
                 var sh = ShipFactory.ship(name);
                 var coordinates = CoordinatesGenerated._coordinates[i];
                 var dir = random.Next(0, 2);
@@ -102,6 +111,13 @@ namespace CShipsBattles.Controller.Game
                         break;
                 }
             }
+        }
+
+        private bool ShouldGameLast(Player player, Player enemy)
+        {
+            if (player.Lives <= 0 || enemy.Lives <= 0 || player.Points == 17 || enemy.Points == 17)
+                return false;
+            return true;
         }
     }
 }
