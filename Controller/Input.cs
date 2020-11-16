@@ -35,5 +35,13 @@ namespace CShipsBattles.Controller
             var y = GetIntInput("Give me direction for y");
             return new Coordinates(x, y);
         }
+
+        public static Coordinates GetShootPosition(string message)
+        {
+            Console.WriteLine(message);
+            var x = GetIntInput("Give me number for x");
+            var y = GetIntInput("Give me number for y");
+            return new Coordinates(x, y);
+        }
     }
 }

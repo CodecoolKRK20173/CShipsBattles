@@ -96,5 +96,10 @@ namespace CShipsBattles.Model
             }
             return i == ship.Size;
         }
+
+        public void Shoot()
+        {
+            
+        }
     }
 }

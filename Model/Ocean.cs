@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 
 namespace CShipsBattles.Model
 {
@@ -45,6 +46,22 @@ namespace CShipsBattles.Model
                 }
                 Console.WriteLine(printedLine);
                 printedLine = "";
+            }
+        }
+
+        public void PlaceShoot(Player player, Coordinates coordinates)
+        {
+            if (OceanField[coordinates.X, coordinates.Y].Look.Equals(Helpers.Cell.wave))
+            {
+                OceanField[coordinates.X, coordinates.Y].Look = Helpers.Cell.loose;
+                player.Lives -= 1;
+                printOcean();
+            }
+            else if (OceanField[coordinates.X, coordinates.Y].Look.Equals(Helpers.Cell.ship))
+            {
+                OceanField[coordinates.X, coordinates.Y].Look = Helpers.Cell.hit;
+                player.Points += 1;
+                printOcean();
             }
         }
     }
