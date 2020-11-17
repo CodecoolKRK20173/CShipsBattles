@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Net;
+using CShipsBattles.Helpers;
 
 namespace CShipsBattles.Model
 {
@@ -45,6 +48,26 @@ namespace CShipsBattles.Model
                 }
                 Console.WriteLine(printedLine);
                 printedLine = "";
+            }
+        }
+
+        public void PlaceShoot(Player player, Coordinates coordinates, List<Coordinates> shipCoordList)
+        //TODO change for checking in list ships coordinates!!!
+        {
+            foreach (var coord in shipCoordList)
+            {
+                if (coord.Equals(coordinates))
+                {
+                    OceanField[coordinates.X, coordinates.Y].Look = Helpers.Cell.hit;
+                    player.Points += 1;
+                }
+                else if (!coord.Equals(coordinates) && 
+                         OceanField[coordinates.X, coordinates.Y].Look.Equals(Helpers.Cell.wave))
+                {
+                    OceanField[coordinates.X, coordinates.Y].Look = Helpers.Cell.loose;
+                    player.Lives -= 1;
+                    printOcean();
+                }
             }
         }
     }

@@ -2,12 +2,11 @@ namespace CShipsBattles.Enums
 {
     public enum ShipNames
     {
-        Destroyer = 1,
-        Cruiser = 2,
-        Submarine = 3,
-        Battleship = 4,
-        Carrier = 5
-
+        Destroyer = 0,
+        Cruiser = 1,
+        Submarine = 2,
+        Battleship = 3,
+        Carrier = 4
     }
     
 }
