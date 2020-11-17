@@ -43,7 +43,7 @@ namespace CShipsBattles.Controller.Game
                 Console.WriteLine("You have " + enemy.Lives + " lives left.");
                 //ocean.printOcean();
                 var shootCoordinates = Input.GetShootPosition("Where to place shoot?");
-                ocean.PlaceShoot(enemy, shootCoordinates);
+                ocean.PlaceShoot(enemy, shootCoordinates, ShipsCoordinates.Coordinates1);
             }
         }
 
@@ -65,8 +65,8 @@ namespace CShipsBattles.Controller.Game
                             CoordinatesGenerated.coordGenerate();
                             coordinates = CoordinatesGenerated._coordinates[i];
                         }
-
-                        player.PlaceShipVertically(coordinates, sh, ocean);
+                        ShipsCoordinates.Coordinates1.Add(coordinates);
+                        //player.PlaceShipVertically(coordinates, sh, ocean);
                         break;
                     case 1:
                         while (!Player.is_place_availableHor(coordinates, sh, ocean))
@@ -75,8 +75,8 @@ namespace CShipsBattles.Controller.Game
                             CoordinatesGenerated.coordGenerate();
                             coordinates = CoordinatesGenerated._coordinates[i];
                         }
-
-                        player.PlaceShipHorizontally(coordinates, sh, ocean);
+                        ShipsCoordinates.Coordinates1.Add(coordinates);
+                        //player.PlaceShipHorizontally(coordinates, sh, ocean);
                         break;
                 }
             }
@@ -96,8 +96,8 @@ namespace CShipsBattles.Controller.Game
                         {
                             coo = Input.GetCoordinates("Give me coordinates for " + name);
                         }
-
-                        enemy.PlaceShipVertically(coo, sh2, oceanEnemy);
+                        ShipsCoordinates.Coordinates2.Add(coo);
+                        //enemy.PlaceShipVertically(coo, sh2, oceanEnemy);
                         oceanEnemy.printOcean();
                         break;
                     case "h":
@@ -105,8 +105,8 @@ namespace CShipsBattles.Controller.Game
                         {
                             coo = Input.GetCoordinates("Give me coordinates for " + name);
                         }
-
-                        enemy.PlaceShipHorizontally(coo, sh2, oceanEnemy);
+                        ShipsCoordinates.Coordinates2.Add(coo);
+                        //enemy.PlaceShipHorizontally(coo, sh2, oceanEnemy);
                         oceanEnemy.printOcean();
                         break;
                 }

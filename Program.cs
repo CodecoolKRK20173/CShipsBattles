@@ -1,7 +1,4 @@
-﻿using System;
-using CShipsBattles.Controller.Game;
-using CShipsBattles.Helpers;
-using CShipsBattles.Model;
+﻿using CShipsBattles.Controller.Game;
 using CSE = CShipsBattles.Enums;
 
 namespace CShipsBattles
