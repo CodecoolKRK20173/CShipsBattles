@@ -59,6 +59,7 @@ namespace CShipsBattles.Model
                     OceanField[coordinates.X, coordinates.Y].Look = Helpers.Cell.hit;
                     player.Points += 1;
                 }
+                //TODO ask why those coordinates, WTF with this boxing allocation
                 else if (!coord.Equals(coordinates) && 
                          OceanField[coordinates.X, coordinates.Y].Look.Equals(Helpers.Cell.wave))
                 {
