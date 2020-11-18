@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
-using CShipsBattles.Helpers;
 
 namespace CShipsBattles.Model
 {

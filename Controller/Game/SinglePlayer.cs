@@ -1,4 +1,4 @@
-using CSE = CShipsBattles.Enums;
+using CShipsBattles.Enums;
 using System;
 using CShipsBattles.Helpers;
 using CShipsBattles.Model;
@@ -55,9 +55,9 @@ namespace CShipsBattles.Controller.Game
         private void PlaceAllShips(Ocean ocean, Ocean oceanEnemy,
             Player player, Player enemy)
         {
-            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            foreach (int i in Enum.GetValues(typeof(ShipNames)))
             {
-                var name = (CSE.ShipNames) i;
+                var name = (ShipNames) i;
                 var sh = ShipFactory.ship(name);
                 var coordinates = CoordinatesGenerated._coordinates[i];
                 var dir = random.Next(0, 2);
@@ -88,9 +88,9 @@ namespace CShipsBattles.Controller.Game
 
             Console.WriteLine("Your board:");
             ocean.printOcean();
-            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            foreach (int i in Enum.GetValues(typeof(ShipNames)))
             {
-                var name = (CSE.ShipNames) i;
+                var name = (ShipNames) i;
                 var sh2 = ShipFactory.ship(name);
                 var direction = Input.GetDirection("Give me direction for " + name);
                 var coo = new Coordinates(100, 100);
