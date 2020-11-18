@@ -1,4 +1,4 @@
-using CSE = CShipsBattles.Enums;
+using CShipsBattles.Enums;
 using System;
 using CShipsBattles.Helpers;
 using CShipsBattles.Model;
@@ -13,8 +13,8 @@ namespace CShipsBattles.Controller.Game
         {
             var ocean = new Ocean(15, 15);
             var oceanEnemy = new Ocean(15, 15);
-            var enemy = new Player("Marta", 0, 7);
-            var player = new Player("Computer", 0, 7);
+            var enemy = new Player("Marta", 0, 25);
+            var player = new Player("Computer", 0, 25);
             CoordinatesGenerated.coordGenerate();
             PlaceAllShips(ocean, oceanEnemy, player, enemy);
             //Console.WriteLine("Computer board:");
@@ -44,15 +44,20 @@ namespace CShipsBattles.Controller.Game
                 //ocean.printOcean();
                 var shootCoordinates = Input.GetShootPosition("Where to place shoot?");
                 ocean.PlaceShoot(enemy, shootCoordinates, ShipsCoordinates.Coordinates1);
+                Console.WriteLine("Shoot " + player.Name);
+                Console.WriteLine("Your score is: " + player.Points);
+                Console.WriteLine("You have " + player.Lives + " lives left.");
+                var computerShoot = new Coordinates(random.Next(0,15), random.Next(0,15));
+                oceanEnemy.PlaceShoot(player, computerShoot, ShipsCoordinates.Coordinates2);
             }
         }
 
         private void PlaceAllShips(Ocean ocean, Ocean oceanEnemy,
             Player player, Player enemy)
         {
-            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            foreach (int i in Enum.GetValues(typeof(ShipNames)))
             {
-                var name = (CSE.ShipNames) i;
+                var name = (ShipNames) i;
                 var sh = ShipFactory.ship(name);
                 var coordinates = CoordinatesGenerated._coordinates[i];
                 var dir = random.Next(0, 2);
@@ -83,9 +88,9 @@ namespace CShipsBattles.Controller.Game
 
             Console.WriteLine("Your board:");
             ocean.printOcean();
-            foreach (int i in Enum.GetValues(typeof(CSE.ShipNames)))
+            foreach (int i in Enum.GetValues(typeof(ShipNames)))
             {
-                var name = (CSE.ShipNames) i;
+                var name = (ShipNames) i;
                 var sh2 = ShipFactory.ship(name);
                 var direction = Input.GetDirection("Give me direction for " + name);
                 var coo = new Coordinates(100, 100);
