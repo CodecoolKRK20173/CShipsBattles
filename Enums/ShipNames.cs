@@ -7,7 +7,6 @@ namespace CShipsBattles.Enums
         Submarine = 2,
         Battleship = 3,
         Carrier = 4
-
     }
     
 }

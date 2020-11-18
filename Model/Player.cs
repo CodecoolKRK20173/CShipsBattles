@@ -1,5 +1,4 @@
 using System;
-using CShipsBattles.Helpers;
 using CShipsBattles.Model.ShipModel;
 
 namespace CShipsBattles.Model
@@ -62,15 +61,8 @@ namespace CShipsBattles.Model
             }
 
             return i == ship.Size;
-            //CoordinatesGenerated.coordGenerate();
         }
-        
-        public static bool is_place_in_range(Coordinates coordinates, Ship ship, Ocean ocean)
-        {
-            return ocean.X - coordinates.X - ship.Size >= 0;
-            //CoordinatesGenerated.coordGenerate();
-        }
-        
+
         public void PlaceShipHorizontally(Coordinates coordinates, Ship ship, Ocean ocean)
         {
             for (var j = 0; j < ship.Size; j++)
@@ -101,13 +93,7 @@ namespace CShipsBattles.Model
             {
                 return false;
             }
-
             return i == ship.Size;
-        }
-        
-        public static bool is_place_in_rangeHor(Coordinates coordinates, Ship ship, Ocean ocean)
-        {
-            return ocean.Y - coordinates.Y - ship.Size >= 0;
         }
     }
 }

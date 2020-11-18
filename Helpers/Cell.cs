@@ -4,7 +4,8 @@ namespace CShipsBattles.Helpers
     {
         //przeniose do cell
         public const string ship = "@";
-        public static string loose = "X";
+        public static string loose = "o";
         public static string wave = "~";
+        public static string hit = "X";
     }
 }
